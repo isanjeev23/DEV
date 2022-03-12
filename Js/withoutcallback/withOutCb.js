@@ -1,3 +1,4 @@
+// node filename.js --source='f1.txt' --n=50000 or any thing you want 
 const minimist = require('minimist');
 const fs = require('fs');
 
@@ -48,4 +49,4 @@ let t4= Date.now();
 // console.log(t4 % 1000);
 console.log(t4-t3);// time to complete cpu tast 
 
-// console.log(arr);
+console.log(t4-t1); // total time taken 
