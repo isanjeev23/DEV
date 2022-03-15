@@ -1,5 +1,5 @@
 // enter source file name and dest file name in key value pair 
-// ... node filemanipul.ja --source="f1.txt" --dest="f2.txt"
+// ... node filemanipul.js --source="f1.txt" --dest="f2.txt"
 const minimist = require('minimist');
 
 const fs = require('fs');
