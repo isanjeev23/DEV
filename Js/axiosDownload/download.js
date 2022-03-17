@@ -2,7 +2,7 @@ let minimist = require("minimist");
 let fs = require('fs');
 
 // npm install axios 
-// node download.js --dest="download.html" --link="https://www.espncricinfo.com/series/icc-cricket-world-cup-2019-1144415"
+// node download.js --dest="download.html" --link="https://www.espncricinfo.com/series/icc-cricket-world-cup-2019-1144415/match-results"
 let axios = require('axios');
 
 let args = minimist(process.argv);
