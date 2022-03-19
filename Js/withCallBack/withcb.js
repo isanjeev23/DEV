@@ -26,7 +26,9 @@ let t1 = Date.now();
 console.log('Starting time task 1 is '+ t1);
 
 // tast 1 read from file i.e disk related or is task k result p koi or dependen nhi h
-fs.readFile(args.source , function(data){
+fs.readFile(args.source , function( err , data){
+    if(err) throw err ;
+
     let t2 = Date.now(); 
     console.log('finishing time t2 is ' + t2 );
     console.log(t2-t1); // finishing tast 1 in milisec
@@ -50,6 +52,7 @@ for(let i=2 ; i<=args.n ; i++){
         arr.push(i);
     }
 }
+console.log(arr);
 let t4 = Date.now();
 console.log('finishing time task2 is ' + t4 );
 console.log(t4-t3);
