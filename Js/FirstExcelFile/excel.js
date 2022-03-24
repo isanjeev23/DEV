@@ -30,6 +30,7 @@ const bgStyle = wb.createStyle({
       patternType: 'solid',
     
       fgColor: 'green',
+      
     }
   });
   
@@ -37,15 +38,15 @@ const bgStyle = wb.createStyle({
 for(let i=0 ; i<teams.length ; i++){
     let sheet = wb.addWorksheet(teams[i].name);
 
-    sheet.cell(1,1).string("Opponent").style(bgStyle);
-    sheet.cell(1,2).string("Result").style(bgStyle);
+    sheet.cell(1,1).string("Rank").style(bgStyle);
+    sheet.cell(1,2).number(teams[i].rank).style(bgStyle);
 
-    sheet.cell(1 , 4).string("Rank").style(bgStyle);
-    sheet.cell(1,5).number(teams[i].rank);
+    sheet.cell(2,1).string("Vs").style(bgStyle);
+    sheet.cell(2,2).string("Result").style(bgStyle);
 
     for(let j= 0 ; j<teams[i].matches.length ; j++){
-        sheet.cell( j+2, 1).string(teams[i].matches[j].vs);
-        sheet.cell( j+2, 2 ).string(teams[i].matches[j].result);
+        sheet.cell( j+3, 1).string(teams[i].matches[j].vs);
+        sheet.cell( j+3, 2 ).string(teams[i].matches[j].result);
     }
 }
 
