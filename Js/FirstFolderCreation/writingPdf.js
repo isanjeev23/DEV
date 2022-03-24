@@ -11,7 +11,10 @@ let args  = minimist(process.argv);
 let teamsJSON = fs.readFileSync(args.source , 'utf-8');
 
 let teams = JSON.parse(teamsJSON)
+ 
+ let flag = fs.existsSync(args.dest);
 
+ if(flag==false)
  fs.mkdirSync(args.dest) ; // making root folder 
 
 for(let i = 0 ; i<teams.length ; i++){
@@ -19,6 +22,7 @@ for(let i = 0 ; i<teams.length ; i++){
 
     let teamFN = path.join(args.dest , teams[i].name);
     
+    if(!fs.existsSync(teamFN))
     fs.mkdirSync(teamFN); // creating child folder of resp team 
 
     for(let j=0 ; j<teams[i].matches.length ; j++){
